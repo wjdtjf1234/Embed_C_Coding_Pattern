@@ -5,8 +5,8 @@
 
 /*class Queue*/
 typedef struct Queue Queue;
-struct Queue {
-	int buffer[Queue_SIZE];
+struct Queue{
+	int buffer[QUEUE_SIZE];
 	int head;
 	int size;
 	int tail;
@@ -15,7 +15,7 @@ struct Queue {
 	int (*getSize)(Queue* const me);
 	void (*insert)(Queue* const me, int k);
 	int (*remove)(Queue* const me);
-}
+};
 
 /*Constructors and Destructors*/
 void Queue_init(Queue* const me, int(*isFullFunction)(Queue* const me),
@@ -33,7 +33,7 @@ int Queue_getSize(Queue* const me);
 void Queue_insert(Queue* const me, int k);
 int Queue_remove(Queue* const me);
 
-Queue* Queue_Create(void);
-void Queue_Destroy(Queue* const me);
+Queue* Queue_create(void);
+void Queue_destroy(Queue* const me);
 
 #endif
